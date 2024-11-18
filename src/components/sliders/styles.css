@@ -1,0 +1,8 @@
+.swiper-3d .swiper-slide-shadow,
+.swiper-slide-shadow-cards {
+  background-color: transparent !important;
+}
+
+.swiper-cards .swiper-slide {
+    @apply overflow-visible;
+}

@@ -1,0 +1,29 @@
+.navbar-block {
+  @apply w-[102%] md:w-auto h-[92vh] md:h-auto absolute top-full left-0;
+  @apply md:peer-checked:translate-y-0 md:translate-y-0;
+  @apply md:top-0 md:relative peer-checked:flex;
+  @apply flex-col flex-wrap justify-center items-center;
+  @apply md:flex md:flex-row;
+  @apply gap-6 p-6;
+  @apply bg-[var(--eggshell)] md:bg-[var(--raisin-black)] md:text-[var(--pearl)];
+  @apply md:rounded-full;
+  @apply before:hidden md:before:block md:before:content-[''] before:-top-8 before:left-0 before:-z-10 before:w-full before:h-[50px] before:absolute before:bg-[var(--raisin-black)];
+  @apply md:p-0 md:py-1 md:gap-0;
+
+  @apply transition-all ease-in-out duration-500;
+}
+
+.navbar-block.closed {
+  @apply transition-all duration-500;
+  @apply invisible flex;
+
+  @apply translate-x-[100%] opacity-0;
+  @apply md:translate-x-[0] md:opacity-100 md:visible;
+}
+
+.navbar-block.open {
+  @apply visible flex;
+
+  @apply md:translate-x-[0] md:opacity-100;
+  @apply translate-x-[0] opacity-100;
+}

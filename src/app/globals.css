@@ -3,25 +3,71 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --pearl: #e1d8c2ff;
+  --ash-gray: #b2b6aeff;
+  --van-dyke: #423834ff;
+  --walnut-brown: #5e5854ff;
+  --raisin-black: #252021ff;
+  --black: #010100ff;
+  --straw: #e6dd75ff;
+  --eggshell: #e6e4d5ff;
+  --isabelline: #edebe6ff;
+  --silver: #c1bfbbff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
+* {
+  @apply border-black;
+}
+
+html {
+  min-height: 100vh;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+
+  cursor: url("/images/cursors/cursor_main.png"), auto;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--black));
+  background-color: var(--eggshell);
+  background-image: url("/images/pencil-sketch-background.webp");
+  background-size: max(20%, 360px);
+  @apply bg-blend-soft-light overflow-x-hidden;
+}
+
+/* Custom CSS */
+.blend-image {
+  @apply opacity-100 mix-blend-hard-light;
+  filter: brightness(0.7) contrast(0.5);
+}
+
+.cursor-pointer {
+  cursor: url("/images/cursors/cursor_pointer.png"), auto !important;
+}
+
+a, button {
+  @apply cursor-pointer;
+}
+
+.text-link {
+  @apply bg-blend-hard-light hover:bg-[var(--straw)] hover:text-black -skew-x-12;
+}
+
+::selection {
+  @apply bg-[var(--straw)] text-[var(--black)];
+}
+
+::-webkit-scrollbar {
+  @apply w-[7px];
+}
+::-webkit-scrollbar-track {
+  @apply bg-[var(--ash-gray)];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--van-dyke)] hover:bg-[var(--raisin-black)];
 }
