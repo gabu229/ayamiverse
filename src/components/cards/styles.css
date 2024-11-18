@@ -1,0 +1,30 @@
+.landscapeShape {
+  clip-path: polygon(
+    0% 0%,
+    85% 0%,
+    100% 25%,
+    100% 100%,
+    15% 100%,
+    15% 100%,
+    0% 75%
+  );
+  -webkit-clip-path: polygon(
+    0% 0%,
+    85% 0%,
+    100% 25%,
+    100% 100%,
+    15% 100%,
+    15% 100%,
+    0% 75%
+  );
+  @apply rounded-3xl border-4;
+  transform: perspective(1000px) rotateX(2deg) rotateY(-7deg) rotateZ(2deg);
+  box-shadow: 24px 16px 64px 0 rgba(0, 0, 0, 0.08);
+}
+
+.portraitShape {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-7deg) rotateZ(2deg);
+  /* clip-path: polygon(0% 20%, 20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 20%, 20% 0%, 100% 0%, 100% 100%, 0% 100%); */
+  @apply rounded-3xl border-4 shadow-xl;
+}
